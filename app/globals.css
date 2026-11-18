@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Segoe UI';
+    --font-serif: Georgia;
+
+    /* Brand palette: deep educational blue primary, nature green secondary */
+    --background: 40 40% 99%;
+    --foreground: 222 22% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 14%;
+
+    /* Deep educational blue */
+    --primary: 217 62% 24%;
+    --primary-foreground: 40 40% 99%;
+
+    /* Warm sand/cream secondary */
+    --secondary: 40 30% 94%;
+    --secondary-foreground: 222 22% 14%;
+
+    --muted: 40 20% 95%;
+    --muted-foreground: 222 12% 45%;
+
+    /* Nature green accent */
+    --accent: 150 45% 45%;
+    --accent-foreground: 40 40% 99%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 60% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 28 80% 20%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 88%;
+    --ring: 217 62% 24%;
+
+    --chart-1: 217 62% 34%;
+    --chart-2: 150 45% 45%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 280 50% 55%;
+    --chart-5: 12 76% 55%;
+
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
